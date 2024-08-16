@@ -2,9 +2,14 @@ import { Job } from "@prisma/client";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
 import Stripe from "@/assets/Strip-logo.svg";
-import { Banknote, Clock, EarthIcon, MapPin } from "lucide-react";
+import {
+  Banknote,
+  BriefcaseBusiness,
+  Clock,
+  EarthIcon,
+  MapPin,
+} from "lucide-react";
 import { formatMoney, relativeDate } from "@/lib/utils";
-
 interface JobListItemProps {
   job: Job;
 }
@@ -33,7 +38,11 @@ const JobListItem = async ({
             <div className="font-semibold">{title}</div>
             <p className="text-sm text-gray-500 ">{companyName}</p>
           </div>
-          <div className="flex flex-col items-start text-sm">
+          <div className="flex flex-col items-start text-sm ">
+            <p className="flex flex-row items-center justify-center gap-1 text-gray-500 md:hidden">
+              <BriefcaseBusiness className="w-[15px]" />
+              {type}
+            </p>
             <p className="flex flex-row items-center justify-center gap-1 text-gray-500">
               <MapPin className="w-[15px]" />
               {locationType}
@@ -46,15 +55,19 @@ const JobListItem = async ({
               <Banknote className="w-[15px]" />
               {formatMoney(salary)}
             </p>
+            <p className="flex items-center gap-1.5 text-sm text-muted-foreground md:hidden">
+              <Clock className="w-[15px]" />
+              {relativeDate(createdAt)}
+            </p>
           </div>
         </div>
       </div>
-      <div className=" flex flex-col items-end justify-between gap-y-16 ">
+      <div className="hidden flex-col items-end justify-between gap-y-14 md:flex ">
         <Badge variant="secondary">{type}</Badge>
-        <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+        <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <Clock className="w-[15px]" />
           {relativeDate(createdAt)}
-        </span>
+        </p>
       </div>
     </div>
   );
