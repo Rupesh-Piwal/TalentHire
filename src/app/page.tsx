@@ -8,7 +8,7 @@ export default async function Home() {
     orderBy: { createdAt: "desc" },
   });
   return (
-    <div>
+    <div className="m-auto min-h-full max-w-5xl px-3">
       {jobs.map((job) => (
         <JobListItem key={job.id} job={job} />
       ))}
