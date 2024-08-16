@@ -49,10 +49,10 @@ const JobListItem = async ({
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center  gap-10">
+      <div className=" flex flex-col items-end justify-between gap-y-16 ">
         <Badge variant="secondary">{type}</Badge>
-        <span className="flex items-center gap-1.5 text-muted-foreground">
-          <Clock size={16} />
+        <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+          <Clock className="w-[15px]" />
           {relativeDate(createdAt)}
         </span>
       </div>
