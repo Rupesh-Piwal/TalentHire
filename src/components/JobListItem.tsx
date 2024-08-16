@@ -2,7 +2,8 @@ import { Job } from "@prisma/client";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
 import Stripe from "@/assets/Strip-logo.svg";
-import { Banknote, EarthIcon, MapPin } from "lucide-react";
+import { Banknote, Clock, EarthIcon, MapPin } from "lucide-react";
+import { formatMoney, relativeDate } from "@/lib/utils";
 
 interface JobListItemProps {
   job: Job;
@@ -20,6 +21,7 @@ const JobListItem = async ({
     applicationUrl,
     companyLogoUrl,
     salary,
+    createdAt,
   },
 }: JobListItemProps) => {
   return (
@@ -42,14 +44,17 @@ const JobListItem = async ({
             </p>
             <p className="flex flex-row items-center justify-center gap-1 text-gray-500">
               <Banknote className="w-[15px]" />
-              {salary}
+              {formatMoney(salary)}
             </p>
           </div>
         </div>
       </div>
       <div className="flex flex-col items-center  gap-10">
         <Badge variant="secondary">{type}</Badge>
-        <p className="text-sm text-gray-500">1 hour ago</p>
+        <span className="flex items-center gap-1.5 text-muted-foreground">
+          <Clock size={16} />
+          {relativeDate(createdAt)}
+        </span>
       </div>
     </div>
   );
