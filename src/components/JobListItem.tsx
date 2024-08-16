@@ -29,22 +29,21 @@ const JobListItem = async ({
         <div className="flex  flex-col items-start justify-start gap-1.5 ">
           <div>
             <div className="font-semibold">{title}</div>
-            <div className="text-sm text-gray-500 ">{companyName}</div>
+            <p className="text-sm text-gray-500 ">{companyName}</p>
           </div>
-          <div className="flex flex-col items-start">
-            <div className="flex flex-row items-center justify-center gap-1 text-gray-500">
+          <div className="flex flex-col items-start text-sm">
+            <p className="flex flex-row items-center justify-center gap-1 text-gray-500">
               <MapPin className="w-[15px]" />
-              <p className="text-sm">{locationType}</p>
-            </div>
-            <div className="flex flex-row items-center justify-center gap-1 text-gray-500">
+              {locationType}
+            </p>
+            <p className="flex flex-row items-center justify-center gap-1 text-gray-500">
               <EarthIcon className="w-[15px]" />
-
-              <p className="text-sm">{location}</p>
-            </div>
-            <div className="flex flex-row items-center justify-center gap-1 text-gray-500">
+              {location}
+            </p>
+            <p className="flex flex-row items-center justify-center gap-1 text-gray-500">
               <Banknote className="w-[15px]" />
-              <p className="text-sm">{salary}</p>
-            </div>
+              {salary}
+            </p>
           </div>
         </div>
       </div>
