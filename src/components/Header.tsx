@@ -9,7 +9,7 @@ const Header = () => {
       <div className="flex items-center gap-8">
         <div className="flex min-w-[375px] flex-row items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <Image src={Logo} alt="talenthire-logo" width={50} height={50} />
+            <Image src={Logo} alt="talenthire-logo" width={36} height={36} />
             <div className="text-2xl font-semibold">TalentHire</div>
           </Link>
           <Menu size={20} className="md:hidden" />
