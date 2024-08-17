@@ -9,7 +9,7 @@ export default async function Home() {
     orderBy: { createdAt: "desc" },
   });
   return (
-    <main className="m-auto min-h-full w-[100%] px-3">
+    <main className="min-h-full w-full">
       <Banner />
       <section>
         <div>
