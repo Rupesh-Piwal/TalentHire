@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
+import Select from "./ui/select";
 
 const filterJobs = async (formData: FormData) => {
   "use server";
@@ -15,6 +16,10 @@ const JobFilter = () => {
           <div className="flex flex-col gap-2">
             <Label htmlFor="q">Search</Label>
             <Input id="q" name="q" placeholder="Title, company, etc." />
+          </div>
+          <div className="flex flex-col gap-2">
+            <Label htmlFor="type">Type</Label>
+            <Select id="type" name="type"></Select>
           </div>
         </div>
       </form>
