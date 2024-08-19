@@ -12,9 +12,9 @@ export default async function Home() {
   return (
     <main className="min-h-full w-full">
       <Banner />
-      <section>
+      <section className="flex flex-col gap-4 md:flex-row">
         <JobFilter />
-        <div>
+        <div className="grow space-y-4">
           {jobs.map((job) => (
             <JobListItem key={job.id} job={job} />
           ))}
