@@ -3,12 +3,22 @@ import React from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import Select from "./ui/select";
+import prisma from "@/lib/prisma";
 
 const filterJobs = async (formData: FormData) => {
   "use server";
 };
 
-const JobFilter = () => {
+const JobFilter = async () => {
+  const distinctLocations = (await prisma.job
+    .findMany({
+      where: { approved: true },
+      select: { location: true },
+      distinct: ["location"],
+    })
+    .then((locations) =>
+      locations.map(({ location }) => location).filter(Boolean),
+    )) as string[];
   return (
     <div className="top-0 ml-4 mt-3 h-fit rounded border bg-background p-4 md:w-[260px] lg:sticky">
       <form action={filterJobs}>
@@ -19,7 +29,14 @@ const JobFilter = () => {
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="type">Type</Label>
-            <Select id="type" name="type"></Select>
+            <Select id="type" name="type" defaultValue="">
+              <option value="">All locations</option>
+              {distinctLocations.map((location) => (
+                <option key={location} value={location}>
+                  {location}
+                </option>
+              ))}
+            </Select>
           </div>
         </div>
       </form>
