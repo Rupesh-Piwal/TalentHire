@@ -6,10 +6,20 @@ import Select from "./ui/select";
 import prisma from "@/lib/prisma";
 import { jobTypes } from "@/lib/job-types";
 import { Button } from "./ui/button";
+import { jobFilterSchema } from "@/lib/validation";
+import { redirect } from "next/navigation";
 
 const filterJobs = async (formData: FormData) => {
   "use server";
-  console.log(formData.get("q") as string);
+  const values = Object.fromEntries(formData.entries());
+  const { q, type, location, remote } = jobFilterSchema.parse(values);
+  const searchParams = new URLSearchParams({
+    ...(q && { q: q.trim() }),
+    ...(type && { type }),
+    ...(location && { location }),
+    ...(remote && { remote: "true" }),
+  });
+  redirect(`/?${searchParams.toString()}`);
 };
 
 const JobFilter = async () => {
@@ -33,7 +43,7 @@ const JobFilter = async () => {
           <div className="flex flex-col gap-2">
             <Label htmlFor="type">Type</Label>
             <Select id="type" name="type" defaultValue="">
-              <option value="">All locations</option>
+              <option value="">All Types</option>
               {jobTypes.map((type) => (
                 <option key={type} value={type}>
                   {type}
@@ -42,7 +52,7 @@ const JobFilter = async () => {
             </Select>
           </div>
           <div className="flex flex-col gap-2">
-            <Label htmlFor="type">Type</Label>
+            <Label htmlFor="type">Location</Label>
             <Select id="type" name="type" defaultValue="">
               <option value="">All locations</option>
               {distinctLocations.map((location) => (
@@ -61,7 +71,10 @@ const JobFilter = async () => {
             />
             <label htmlFor="remote">Remote jobs</label>
           </div>
-          <Button className="w-full bg-[#4640DE]" type="submit">
+          <Button
+            className="w-full bg-[#4640DE] hover:bg-[#4640DE]/90"
+            type="submit"
+          >
             Filter jobs
           </Button>
         </div>
