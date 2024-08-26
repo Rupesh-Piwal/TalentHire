@@ -4,9 +4,12 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import Select from "./ui/select";
 import prisma from "@/lib/prisma";
+import { jobTypes } from "@/lib/job-types";
+import { Button } from "./ui/button";
 
 const filterJobs = async (formData: FormData) => {
   "use server";
+  console.log(formData.get("q") as string);
 };
 
 const JobFilter = async () => {
@@ -29,7 +32,14 @@ const JobFilter = async () => {
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="type">Type</Label>
-            <Select id="type" name="type" defaultValue=""></Select>
+            <Select id="type" name="type" defaultValue="">
+              <option value="">All locations</option>
+              {jobTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </Select>
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="type">Type</Label>
@@ -42,6 +52,18 @@ const JobFilter = async () => {
               ))}
             </Select>
           </div>
+          <div className="flex items-center gap-2 ">
+            <input
+              className="scale-125 cursor-pointer accent-[#4640DE]"
+              type="checkbox"
+              id="remote"
+              name="remote"
+            />
+            <label htmlFor="remote">Remote jobs</label>
+          </div>
+          <Button className="w-full bg-[#4640DE]" type="submit">
+            Filter jobs
+          </Button>
         </div>
       </form>
     </div>
