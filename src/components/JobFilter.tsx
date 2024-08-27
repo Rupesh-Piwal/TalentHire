@@ -8,6 +8,7 @@ import { jobTypes } from "@/lib/job-types";
 import { Button } from "./ui/button";
 import { jobFilterSchema, jobFilterValues } from "@/lib/validation";
 import { redirect } from "next/navigation";
+import FormSubmitButton from "./FormSubmitButton";
 
 const filterJobs = async (formData: FormData) => {
   "use server";
@@ -89,12 +90,9 @@ const JobFilter = async ({ defaultValues }: JobFilterProps) => {
             />
             <label htmlFor="remote">Remote jobs</label>
           </div>
-          <Button
-            className="w-full bg-[#4640DE] hover:bg-[#4640DE]/90"
-            type="submit"
-          >
+          <FormSubmitButton className="w-full bg-[#4640DE] hover:bg-[#4640DE]/90">
             Filter jobs
-          </Button>
+          </FormSubmitButton>
         </div>
       </form>
     </div>
