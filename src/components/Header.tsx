@@ -30,9 +30,12 @@ const Header = () => {
         <button className="rounded bg-gray-100 px-4 py-2 font-semibold text-[#0A65CC] shadow-sm hover:bg-gray-200">
           Login
         </button>
-        <button className="rounded bg-[#0A65CC] px-4 py-2 font-semibold text-white hover:bg-[#0A65CC]/90">
+        <Link
+          href="/jobs/new"
+          className="rounded bg-[#0A65CC] px-4 py-2 font-semibold text-white hover:bg-[#0A65CC]/90"
+        >
           Post Jobs
-        </button>
+        </Link>
       </div>
     </div>
   );
