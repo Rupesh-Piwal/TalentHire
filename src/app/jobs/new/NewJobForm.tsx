@@ -257,6 +257,7 @@ export default function NewJobForm() {
                   </Label>
                   <FormControl>
                     <RichTextEditor
+                      placeholder="Write down about your company here. Let the candidate know who we are..."
                       onChange={(draft) =>
                         field.onChange(draftToMarkdown(draft))
                       }
@@ -280,7 +281,11 @@ export default function NewJobForm() {
                 </FormItem>
               )}
             />
-            <LoadingButton type="submit" loading={isSubmitting}>
+            <LoadingButton
+              className="bg-[#0A65CC] hover:bg-[#0A65CC]/90"
+              type="submit"
+              loading={isSubmitting}
+            >
               Submit
             </LoadingButton>
           </form>
