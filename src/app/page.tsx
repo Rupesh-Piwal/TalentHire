@@ -2,7 +2,7 @@ import Banner from "@/components/Banner";
 import JobFilter from "@/components/JobFilter";
 import JobListItem from "@/components/JobListItem";
 import JobResults from "@/components/JobResults";
-import { jobFilterValues } from "@/lib/validation";
+import { JobFilterValues } from "@/lib/validation";
 
 interface PageProps {
   searchParams: {
@@ -16,7 +16,7 @@ interface PageProps {
 export default async function Home({
   searchParams: { q, type, location, remote },
 }: PageProps) {
-  const filterValues: jobFilterValues = {
+  const filterValues: JobFilterValues = {
     q,
     type,
     location,
