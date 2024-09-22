@@ -6,7 +6,7 @@ import Select from "./ui/select";
 import prisma from "@/lib/prisma";
 import { jobTypes } from "@/lib/job-types";
 import { Button } from "./ui/button";
-import { jobFilterSchema, jobFilterValues } from "@/lib/validation";
+import { jobFilterSchema, JobFilterValues } from "@/lib/validation";
 import { redirect } from "next/navigation";
 import FormSubmitButton from "./FormSubmitButton";
 
@@ -24,7 +24,7 @@ const filterJobs = async (formData: FormData) => {
 };
 
 interface JobFilterProps {
-  defaultValues: jobFilterValues;
+  defaultValues: JobFilterValues;
 }
 
 const JobFilter = async ({ defaultValues }: JobFilterProps) => {
