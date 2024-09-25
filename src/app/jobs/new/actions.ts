@@ -54,6 +54,7 @@ export async function createJobPosting(formData: FormData) {
       applicationUrl: applicationUrl,
       description: description?.trim(),
       salary: parseInt(salary),
+      approved: true,
     },
   });
 
