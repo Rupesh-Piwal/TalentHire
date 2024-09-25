@@ -16,19 +16,10 @@ const Header = () => {
           </Link>
           <Menu size={20} className="md:hidden" />
         </div>
-
-        <div className="hidden gap-4 md:flex">
-          <Link className="hover:text-[#0A65CC]" href="/jobs">
-            Find Jobs
-          </Link>
-          <Link className="hover:text-[#0A65CC]" href="/companies">
-            Browse Companies
-          </Link>
-        </div>
       </div>
       <div className="hidden gap-4 md:flex">
         <button className="rounded bg-gray-100 px-4 py-2 font-semibold text-[#0A65CC] shadow-sm hover:bg-gray-200">
-          Login
+          Hire Me
         </button>
         <Link
           href="/jobs/new"
