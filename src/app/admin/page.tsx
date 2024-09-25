@@ -9,7 +9,9 @@ export default async function AdminPage() {
 
   return (
     <main className="m-auto my-10 max-w-5xl space-y-10 px-3">
-      <h2 className="text-center text-3xl">Admin Dashboard</h2>
+      <h2 className="text-center text-3xl font-semibold text-[#0A65CC]">
+        Admin Dashboard
+      </h2>
       <section className="flex flex-col gap-3">
         <h2 className="text-lg font-bold">Unapproved jobs:</h2>
         {unapprovedJobs.map((job) => (
