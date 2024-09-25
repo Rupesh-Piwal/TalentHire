@@ -82,7 +82,7 @@ const JobFilter = async ({ defaultValues }: JobFilterProps) => {
           </div>
           <div className="flex items-center gap-2 ">
             <input
-              className="scale-125 cursor-pointer accent-[#4640DE]"
+              className="scale-125 cursor-pointer accent-[#0A65CC]"
               type="checkbox"
               id="remote"
               name="remote"
@@ -90,7 +90,7 @@ const JobFilter = async ({ defaultValues }: JobFilterProps) => {
             />
             <label htmlFor="remote">Remote jobs</label>
           </div>
-          <FormSubmitButton className="w-full bg-[#4640DE] hover:bg-[#4640DE]/90">
+          <FormSubmitButton className="w-full bg-[#0A65CC] hover:bg-[#0A65CC]/90">
             Filter jobs
           </FormSubmitButton>
         </div>
