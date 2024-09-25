@@ -1,12 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+// next.config.js
+module.exports = {
   images: {
-    remotePatterns: [
-      {
-        hostname: "g5dx4zowmemhzky1.public.blob.vercel-storage.com",
-      },
-    ],
+    domains: ["rclgwxqa0dcct2vd.public.blob.vercel-storage.com"], // Add your domain here
   },
 };
-
-export default nextConfig;
