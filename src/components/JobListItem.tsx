@@ -1,7 +1,7 @@
 import { Job } from "@prisma/client";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
-import Stripe from "@/assets/Strip-logo.svg";
+import companyLogoPlaceholder from "@/assets/company-logo-placeholder.png";
 import {
   Banknote,
   BriefcaseBusiness,
@@ -32,7 +32,12 @@ const JobListItem = async ({
   return (
     <div className="my-3 flex max-w-[919px] cursor-pointer flex-row items-center justify-between border border-gray-200 px-6 py-4 hover:bg-gray-50">
       <div className="flex flex-row items-start gap-6">
-        <Image alt="" src={Stripe} width={50} height={50} />
+        <Image
+          alt=""
+          src={companyLogoUrl || companyLogoPlaceholder}
+          width={50}
+          height={50}
+        />
         <div className="flex  flex-col items-start justify-start gap-1.5 ">
           <div>
             <div className="font-semibold">{title}</div>

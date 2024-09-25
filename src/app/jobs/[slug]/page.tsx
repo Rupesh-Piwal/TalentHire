@@ -57,7 +57,7 @@ export default async function Page({ params: { slug } }: PageProps) {
       <JobPage job={job} />
       <aside>
         <Button asChild>
-          <a href={applicationLink} className="w-40 md:w-fit">
+          <a href={applicationLink} className="w-40 !bg-[#0A65CC] hover: bg-[#0A65CC]/90 md:w-fit">
             Apply now
           </a>
         </Button>

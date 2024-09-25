@@ -24,7 +24,7 @@ export default function JobPage({
   },
 }: JobPageProps) {
   return (
-    <section className="w-full grow space-y-5">
+    <section className="w-full grow space-y-5 rounded-sm border border-blue-200 p-5">
       <div className="flex items-center gap-3">
         {
           <Image
