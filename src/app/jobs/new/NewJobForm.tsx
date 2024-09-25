@@ -193,9 +193,9 @@ export default function NewJobForm() {
                           setValue("location", "", { shouldValidate: true });
                         }}
                       >
-                        <X size={20} />
+                        <X size={20} className="bg-red-400 text-white  rounded " />
                       </button>
-                      <span className="text-sm">{watch("location")}</span>
+                      <span className="text-sm text-slate-600 bg-slate-100 py-[1px] px-2 font-semibold rounded">{watch("location")}</span>
                     </div>
                   )}
                   <FormMessage />

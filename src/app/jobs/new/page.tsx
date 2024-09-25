@@ -6,5 +6,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <div>page</div>;
+  return (
+    <div>
+      <NewJobForm />
+    </div>
+  );
 }
