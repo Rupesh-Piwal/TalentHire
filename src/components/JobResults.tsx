@@ -109,20 +109,20 @@ function Pagination({
       <Link
         href={generatePageLink(currentPage - 1)}
         className={cn(
-          "flex items-center gap-2 font-semibold",
+          "flex items-center justify-center gap-2 font-semibold",
           currentPage <= 1 && "invisible",
         )}
       >
         <ArrowLeft size={16} />
         Previous page
       </Link>
-      <span className="font-semibold">
+      <span className="font-semibold text-[#0A65CC]">
         Page {currentPage} of {totalPages}
       </span>
       <Link
         href={generatePageLink(currentPage + 1)}
         className={cn(
-          "flex items-center gap-2 font-semibold",
+          "flex items-center gap-2 rounded bg-[#0A65CC] px-3 py-1.5 font-semibold text-white hover:bg-[#0A65CC]/90",
           currentPage >= totalPages && "invisible",
         )}
       >
