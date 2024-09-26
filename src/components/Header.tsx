@@ -10,7 +10,7 @@ const Header = () => {
         <div className="flex flex-row items-center justify-between md:min-w-[375px]">
           <Link href="/" className="flex items-center gap-2">
             <Image src={Logo} alt="talenthire-logo" width={36} height={36} />
-            <div className="text-[14px] font-semibold text-[#18191C] md:text-2xl">
+            <div className="text-[16px] font-semibold text-[#18191C] md:text-2xl">
               TalentHire
             </div>
           </Link>
@@ -27,7 +27,7 @@ const Header = () => {
         </PulsatingButton>
         <Link
           href="/jobs/new"
-          className="rounded-sm border border-[#0A65CC] px-[4px] py-2 text-center text-[15px] font-semibold text-[#0A65CC] hover:bg-[#0A65CC]/90 md:px-4"
+          className="rounded-sm border border-[#0A65CC] px-[4px] py-2 text-center text-[15px] font-semibold text-[#0A65CC] hover:bg-[#0A65CC]/90 hover:text-white md:px-4"
         >
           Post Jobs
         </Link>
