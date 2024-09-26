@@ -1,7 +1,7 @@
 import { Job } from "@prisma/client";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
-import companyLogoPlaceholder from "@/assets/company-logo-placeholder.png";
+import companyLogoPlaceholder from "@/assets/job borad logo.gif";
 import {
   Banknote,
   BriefcaseBusiness,

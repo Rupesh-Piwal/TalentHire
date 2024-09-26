@@ -4,7 +4,7 @@ import { Banknote, Briefcase, Globe2, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "@/components/Markdown";
-import companyLogoPlaceholder from "@/assets/company-logo-placeholder.png";
+import companyLogoPlaceholder from "@/assets/job borad logo.gif";
 
 interface JobPageProps {
   job: Job;
