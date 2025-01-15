@@ -2,7 +2,7 @@ import prisma from "@/lib/prisma";
 import { cn } from "@/lib/utils";
 import { JobFilterValues } from "@/lib/validation";
 import { Prisma } from "@prisma/client";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Briefcase } from "lucide-react";
 import Link from "next/link";
 import JobListItem from "./JobListItem";
 
@@ -59,23 +59,35 @@ export default async function JobResults({
   const [jobs, totalResults] = await Promise.all([jobsPromise, countPromise]);
 
   return (
-    <div className="grow space-y-4">
-      {jobs.map((job) => (
-        <Link key={job.id} href={`/jobs/${job.slug}`} className="block">
-          <JobListItem job={job} />
-        </Link>
-      ))}
-      {jobs.length === 0 && (
-        <p className="m-auto text-center">
-          No jobs found. Try adjusting your search filters.
-        </p>
-      )}
-      {jobs.length > 0 && (
-        <Pagination
-          currentPage={page}
-          totalPages={Math.ceil(totalResults / jobsPerPage)}
-          filterValues={filterValues}
-        />
+    <div className="grow space-y-6">
+      {jobs.length === 0 ? (
+        <div className="flex min-h-[400px] flex-col items-center justify-center rounded-xl bg-white/50 p-8 text-center backdrop-blur-sm">
+          <div className="mb-4 rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 p-4">
+            <Briefcase className="h-8 w-8 text-indigo-600" />
+          </div>
+          <p className="text-lg font-medium text-gray-600">
+            No jobs found. Try adjusting your search filters.
+          </p>
+        </div>
+      ) : (
+        <>
+          <div className="grid gap-4">
+            {jobs.map((job) => (
+              <Link
+                key={job.id}
+                href={`/jobs/${job.slug}`}
+                className="transform transition-all duration-300 hover:scale-[1.02]"
+              >
+                <JobListItem job={job} />
+              </Link>
+            ))}
+          </div>
+          <Pagination
+            currentPage={page}
+            totalPages={Math.ceil(totalResults / jobsPerPage)}
+            filterValues={filterValues}
+          />
+        </>
       )}
     </div>
   );
@@ -105,29 +117,37 @@ function Pagination({
   }
 
   return (
-    <div className="flex justify-between">
+    <div className="flex items-center justify-between rounded-lg bg-white/80 p-4 backdrop-blur-sm">
       <Link
         href={generatePageLink(currentPage - 1)}
         className={cn(
-          "flex items-center justify-center gap-2 font-semibold",
+          "flex items-center gap-2 rounded-lg border-2 border-indigo-600 px-4 py-2 font-semibold text-indigo-600 transition-all hover:bg-indigo-600 hover:text-white",
           currentPage <= 1 && "invisible",
         )}
       >
-        <ArrowLeft size={16} />
-        Previous page
+        <ArrowLeft
+          size={16}
+          className="transition-transform group-hover:-translate-x-1"
+        />
+        Previous
       </Link>
-      <span className="font-semibold text-[#0A65CC]">
+
+      <span className="rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text px-4 py-2 text-lg font-bold text-transparent">
         Page {currentPage} of {totalPages}
       </span>
+
       <Link
         href={generatePageLink(currentPage + 1)}
         className={cn(
-          "flex items-center gap-2 rounded bg-[#0A65CC] px-3 py-1.5 font-semibold text-white hover:bg-[#0A65CC]/90",
+          "group flex items-center gap-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-2 font-semibold text-white shadow-lg transition-all hover:from-indigo-700 hover:to-purple-700",
           currentPage >= totalPages && "invisible",
         )}
       >
-        Next page
-        <ArrowRight size={16} />
+        Next
+        <ArrowRight
+          size={16}
+          className="transition-transform group-hover:translate-x-1"
+        />
       </Link>
     </div>
   );
