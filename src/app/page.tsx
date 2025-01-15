@@ -1,6 +1,5 @@
 import Banner from "@/components/Banner";
 import JobFilter from "@/components/JobFilter";
-import JobListItem from "@/components/JobListItem";
 import JobResults from "@/components/JobResults";
 import { JobFilterValues } from "@/lib/validation";
 

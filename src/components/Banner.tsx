@@ -60,7 +60,7 @@ const Banner: React.FC = () => {
               className="text-[32px] font-bold tracking-tight text-[#18191C] md:text-6xl"
               variants={itemVariants}
             >
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text font-bold text-transparent px-2">
+              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text px-2 font-bold text-transparent">
                 Find a job
               </span>
               that suits your

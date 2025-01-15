@@ -7,46 +7,39 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <div className="mt-[60px] bg-[#18191C] px-[20px] md:px-[150px]">
-      {/* Mobile View (up to md) */}
+    <div className="mt-[60px] bg-indigo-600 px-[20px] md:px-[150px]">
       <div className="flex flex-col items-center justify-center py-[30px] md:hidden">
-        {/* Logo and Brand Name */}
         <div className="flex flex-row items-center gap-2">
           <Image alt="briefcase" src={Logo} width={40} height={40} />
           <h1 className="text-[24px] text-[#ffffff]">TalentHire</h1>
         </div>
 
-        {/* Social Media Links */}
         <div className="mt-4 flex flex-row items-center gap-4">
           <Link href="https://github.com/Rupesh-Piwal">
-            <Github className="text-[#5E6670]" />
+            <Github className="text-[#ffffff]" />
           </Link>
           <Link href="https://www.linkedin.com/in/rupesh-piwal21/">
-            <Linkedin className="text-[#5E6670]" />
+            <Linkedin className="text-[#ffffff]" />
           </Link>
           <Link href="https://twitter.com/rpmarch21">
-            <Twitter className="text-[#5E6670]" />
+            <Twitter className="text-[#ffffff]" />
           </Link>
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="border-t border-[#5E6670] md:hidden"></div>
+      <div className="border-t border-[#ffffff] md:hidden"></div>
 
-      {/* Copyright Text */}
-      <div className="flex justify-center py-4 text-[14px] text-[#5E6670] md:hidden">
+      <div className="flex justify-center py-4 text-[14px] text-[#ffffff] md:hidden">
         &copy; {currentYear} TalentHire - Job Portal. All Rights Reserved.
       </div>
 
-      {/* Larger View (md and above) */}
       <div className="hidden flex-row justify-between py-[50px] md:flex">
-        {/* Logo and Brand Name */}
         <div className="flex flex-col gap-3">
           <div className="flex flex-row items-center gap-2">
             <Image alt="briefcase" src={Logo} width={40} height={40} />
             <h1 className="text-[24px] text-[#ffffff]">TalentHire</h1>
           </div>
-          <div className="flex flex-col gap-3 text-[14px] text-[#5E6670]">
+          <div className="flex flex-col gap-3 text-[14px] text-[#ffffff]">
             <p>
               Call now: <span className="text-[#ffffff]">(319) 555-0115</span>
             </p>
@@ -58,9 +51,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Quick Links Section */}
-        <div className="flex flex-col gap-2 text-[14px] text-[#5E6670]">
-          <h1 className="text-[20px] text-[#ffffff]">Quick Links</h1>
+        <div className="flex flex-col gap-2 text-[14px] text-[#ffffff]">
+          <h1 className="text-[20px]">Quick Links</h1>
           <Link className="hover:text-[#0A65CC]" href="#">
             About
           </Link>
@@ -75,9 +67,8 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* Candidate Section */}
-        <div className="flex flex-col gap-2 text-[14px] text-[#5E6670]">
-          <h1 className="text-[20px] text-[#ffffff]">Candidate</h1>
+        <div className="flex flex-col gap-2 text-[14px] text-[#ffffff]">
+          <h1 className="text-[20px]">Candidate</h1>
           <Link className="hover:text-[#0A65CC]" href="#">
             Browse Jobs
           </Link>
@@ -92,9 +83,8 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* Employers Section */}
-        <div className="flex flex-col gap-2 text-[14px] text-[#5E6670]">
-          <h1 className="text-[20px] text-[#ffffff]">Employers</h1>
+        <div className="flex flex-col gap-2 text-[14px] text-[#ffffff]">
+          <h1 className="text-[20px]">Employers</h1>
           <Link className="hover:text-[#0A65CC]" href="#">
             Post a Job
           </Link>
@@ -109,9 +99,8 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* Support Section */}
-        <div className="flex flex-col gap-2 text-[14px] text-[#5E6670]">
-          <h1 className="text-[20px] text-[#ffffff]">Support</h1>
+        <div className="flex flex-col gap-2 text-[14px] text-[#ffffff]">
+          <h1 className="text-[20px]">Support</h1>
           <Link className="hover:text-[#0A65CC]" href="#">
             Faqs
           </Link>
@@ -124,20 +113,19 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Bottom Bar for Larger Screens */}
-      <div className="hidden flex-row items-center justify-between py-6 text-[#5E6670] md:flex">
+      <div className="hidden flex-row items-center justify-between py-6 text-[#ffffff] md:flex">
         <div className="text-[14px]">
           &copy; {currentYear} TalentHire - Job Portal. All Rights Reserved.
         </div>
         <div className="flex flex-row items-center gap-4">
           <Link href="https://github.com/Rupesh-Piwal">
-            <Github className="text-[#5E6670]" />
+            <Github className="text-[#ffffff]" />
           </Link>
           <Link href="https://www.linkedin.com/in/rupesh-piwal21/">
-            <Linkedin className="text-[#5E6670]" />
+            <Linkedin className="text-[#ffffff]" />
           </Link>
           <Link href="https://twitter.com/rpmarch21">
-            <Twitter className="text-[#5E6670]" />
+            <Twitter className="text-[#ffffff]" />
           </Link>
         </div>
       </div>
